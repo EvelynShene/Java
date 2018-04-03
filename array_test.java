@@ -59,8 +59,11 @@ public class test {
 		System.out.println("a[0]:"+a[0][0]);
  		return t;
 	}
-	
-	public static void copyarray(int[][] src, int[][] dest){
+	/** 
+	 * copyarray: 二维数组对象复制 （深复制）
+	 * clone()和“=”都是复制引用 （浅复制）
+	*/
+	public static void copyarray(int[][] src, int[][] dest){ 
 		for(int i = 0; i < src.length; i++){
 			System.arraycopy(src[i], 0, dest[i], 0, src[i].length);
 		}
@@ -92,7 +95,8 @@ public class test {
 		System.out.println(y);
 	}
 
-	public static int[][] change(int[][] a){
+	//此函数中参数a是传值参数
+	public static int[][] change(int[][] a){ 
 		int[][] t = new int[2][2];
 		for(int i = 0; i < 2; i++){
 			for(int j = 0; j < 2; j++){
