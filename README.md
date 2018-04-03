@@ -1,2 +1,2 @@
 # Java
-# This repo is used to record the tips for java.
+## This repo is used to record the tips for java.
