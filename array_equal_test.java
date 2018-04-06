@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class arraytest {
+public class arrayEqualTest {
 
 	public static void main(String[] arg){
 		int[][] a = {{1,2},{3,4}};
