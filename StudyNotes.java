@@ -1,6 +1,10 @@
 /**
 * java中的自动装箱与拆箱
 * 简单一点说，装箱就是自动将基本数据类型转换为包装器类型；拆箱就是自动将包装器类型转换为基本数据类型。
+* 
+* 注意 == 与 equals的区别:
+*   1)  == 它比较的是对象的地址
+*   2) equals 比较的是对象的内容
 */
 public class Number {
     public static void main(String[] args) {
@@ -16,12 +20,7 @@ public class Number {
         */
         Integer i1 = 200;
         Integer i2 = 200;
-
-        /**
-        注意 == 与 equals的区别
-        == 它比较的是对象的地址
-        equals 比较的是对象的内容
-        */
+        
         if(i1==i2) {
             System.out.println("true");
         } else {
