@@ -8,6 +8,8 @@ public class arrayEqualTest {
 		int[][] b = new int[2][2];
 		int i = 0;
 		boolean t = true;
+		
+		/* Array的相等（equals）判断只能是一维的 */
 		if(a != null && b != null && a.length == b.length){
 			for(int l = 0; l < a.length; l++){
 				if(!Arrays.equals(a[l], b[l])){
