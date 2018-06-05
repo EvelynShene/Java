@@ -48,9 +48,9 @@ case 3：
 2）StringBuffer：字符串变量（Synchronized，即线程安全）。如果要频繁对字符串内容进行修改，出于效率考虑最好使用 StringBuffer，如果想转成 String
 类型，可以调用 StringBuffer 的 toString() 方法。Java.lang.StringBuffer 线程安全的可变字符序列。在任意时间点上它都包含某种特定的字符序列，但
 通过某些方法调用可以改变该序列的长度和内容。可将字符串缓冲区安全地用于多个线程。
-3）StringBuilder：字符串变量（非线程安全）。在内部 StringBuilder 对象被当作是一个包含字符序列的变长数组。(有速度优势)
+3）StringBuilder：字符串变量（非线程安全）。在内部 StringBuilder 对象被当作是一个包含字符序列的变长数组。(有速度优势,常用)
 
 基本原则：
-如果要操作少量的数据用 String ；
-单线程操作大量数据用StringBuilder ；
-多线程操作大量数据，用StringBuffer。
+如果要操作少量的数据用 String 
+多线程操作大量数据，用StringBuffer
+单线程操作大量数据用StringBuilder 
