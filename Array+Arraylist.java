@@ -1,3 +1,9 @@
+/*  ArrayList 是线性表（数组）
+ *    1) get() 直接读取第几个下标，复杂度 O(1)
+ *    2) add(E) 添加元素，直接在后面添加，复杂度O（1）
+ *    3) add(index, E) 添加元素，在第几个元素后面插入，后面的元素需要向后移动，复杂度O（n）
+ *    4) remove（）删除元素，后面的元素需要逐个移动，复杂度O（n）
+ */
 import java.util.ArrayList;
 
 public class Array {
