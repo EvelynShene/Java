@@ -62,3 +62,15 @@ Method/Function:
     其返回的是一个int类型值。若Str1等于参数字符串Str2字符串，则返回0；若该Str1按字典顺序小于参数字符串Str2，则返回值小于0；若Str1按字典顺序大于参数字符串Str2，则返回值大于0。
 
 2）因为String类是不可改变的，所以String类没有修改删除某个字符的函数。setCharAt()只存在于StringBuffer和StringBuilder类中。
+
+3) compareTo()方法
+    如果这个字符串是等参数字符串那么返回值0，如果这个字符串是按字典顺序小于字符串参数那么返回小于0的值，如果此字符串是按字典顺序大于字符串参数那么返回一个大于0的值
+
+  举例：
+    String s1 = "hello";
+    String s2 = "hello";
+    String s3 = "abc";
+    String s4 = "xyz";
+    System.out.println(s1.compareTo(s2));  //0;
+    System.out.println(s1.compareTo(s3));  //7;      h为104，a为97，差为7
+    System.out.println(s1.compareTo(s4));  //-16;  h为104，x为120，差为-16
