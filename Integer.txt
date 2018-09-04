@@ -1,0 +1,24 @@
+ Integer c = 3;
+    Integer d = 3;
+    Integer e = 321;
+    Integer f = 321;
+
+    System.out.println(c == d);
+    System.out.println(e == f);
+
+输出: true 
+     false
+
+Integer为对象判断是否相等还是使用equals最靠谱， int为基本类型，判断是否相等就是可以使用==.
+
+原因：
+static final Integer cache[] = new Integer[-(-128) + 127 + 1];
+
+      static {
+          for(int i = 0; i < cache.length; i++){
+            cache[i] = new Integer(i - 128);
+          }
+      }
+这是源码中的，也就是说cache中已有-128到127，不在这范围的会新new ，这时可以理解比较是内存地址，也就是是不是同一对象.
+
+=> 当Integer的值不在-128到127的时候使用==方法判断是否相等就会出错，在这个范围之内的就会没有问题！！！
