@@ -1,0 +1,42 @@
+// Java中数组、List、Set互相转换: [转载自https://blog.csdn.net/my_precious/article/details/53010232]
+1. Array -> List
+      String[] arr = new String[]{"Tom", "Bob", "Jane"};
+      List list = Arrays.asList(arr);
+
+  Note: 需要注意的是， Arrays.asList() 返回一个受指定数组决定的固定大小的列表。所以不能做 add 、 remove 等操作，否则会报错。
+      List list = Arrays.asList(arr);
+      list.add("Mary"); // UnsupportedOperationException
+      list.remove(0); // UnsupportedOperationException123
+  => 如果想再做增删操作呢？将数组中的元素一个一个添加到列表，这样列表的长度就不固定了，可以进行增删操作，如下：
+      List list = new ArrayList<String>();
+      for(String tmp: arr){
+        list.add(tmp);
+      }
+      list.add("Mary"); // ok
+      list.remove(0); // ok
+
+2. Array -> Set (array -> list -> set)
+      String[] arr = new String[]{"Tom", "Bob", "Jane"};
+      Set<String> set = new HashSet<>(Arrays.asList(arr));
+      set.add("Mary"); // ok
+      set.remove("Tom"); // ok
+
+3. List -> Array
+      String[] arr = new String[]{"Tom", "Bob", "Jane"};
+      List list = Arrays.asList(arr);
+      Object[] result = list.toArray();
+      
+4. List -> Set
+      String[] arr = new String[]{"Tom", "Bob", "Jane"};
+      List list = Arrays.asList(arr);
+      Set result = new HashSet(list);
+      
+5. Set -> Array
+      String[] arr = new String[]{"Tom", "Bob", "Jane"};
+      Set<String> set = new HashSet<>(Arrays.asList(arr));
+      Object[] result = set.toArray();
+
+6. Set -> List
+      String[] arr = new String[]{"Tom", "Bob", "Jane"};
+      Set<String> set = new HashSet<>(Arrays.asList(arr));
+      List<String> result = new ArrayList<>(set);
