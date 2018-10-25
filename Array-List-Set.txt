@@ -40,3 +40,27 @@
       String[] arr = new String[]{"Tom", "Bob", "Jane"};
       Set<String> set = new HashSet<>(Arrays.asList(arr));
       List<String> result = new ArrayList<>(set);
+
+//java中二维数组与list的转换 - 以leetcode406为例子
+class Solution {
+    public int[][] reconstructQueue(int[][] people) {
+        if(people == null || people.length == 0){
+            return new int[0][0];
+        }
+        int n = people.length;
+        
+        Arrays.sort(people, new Comparator<int[]>(){
+            public int compare(int[] a, int[] b){
+                if(a[0] == b[0]){
+                    return a[1] - b[1];
+                }
+                return b[0] - a[0];
+            }
+        });
+        List<int[]> tmp = new ArrayList<int[]>();
+        for(int i = 0; i < n; i++){
+            tmp.add(people[i][1], people[i]);
+        }
+        return tmp.toArray(new int[n][]); // toArray()
+    }
+}
